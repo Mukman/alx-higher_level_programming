@@ -1,76 +1,38 @@
-# 0x06. Python - Classes and Objects
-## This directory contains answer files to project 0x06
+# :shell: 0x05 - Python, Classes and objects :shell:
 
-### 0. My first square
-* an empty class Square that defines a square:
-* File: 0-square.py
+In this project I will be learning how to implement classes and object oriented programming in python. I have experience in C# so doing it in python will be interesting.
 
-### 1. Square with size
-* a class Square that defines a square by: (based on 0-square.py)
-* Private instance attribute: size
-* Instantiation with size (no type/value verification)
-* File: 1-square.py
+## :running: Getting Started
 
-### 2. Size validation
-* a class Square that defines a square by: (based on 1-square.py)
-* Private instance attribute: size
-* Instantiation with optional size: def __init__(self, size=0):
-* File: 2-square.py
+* [Ubuntu 14.04 LTS](http://releases.ubuntu.com/14.04/) - Operating system reqd.
 
-### 3. Area of a square
-* a class Square that defines a square by: (based on 2-square.py)
-* Private instance attribute: size
-* Instantiation with optional size: def __init__(self, size=0):
-* Public instance method: def area(self): that returns the current square area
-* File: 3-square.py
+* [Python 3.4](https://www.python.org/download/releases/3.4.0/) - Python Version Used
 
-### 4. Access and update private attribute
-* a class Square that defines a square by: (based on 3-square.py)
-* Private instance attribute: size:
-* Instantiation with optional size: def __init__(self, size=0):
-* Public instance method: def area(self): that returns the current square area
-* File: 4-square.py
+## :warning: Prerequisites
 
-### 5. Printing a square
-* a class Square that defines a square by: (based on 4-square.py)
-* Private instance attribute: size:
-* Public instance method: def area(self): that returns the current square area
-* Public instance method: def my_print(self): that prints in stdout the square with the character #:
-* File: 5-square.py
+* Must have `git` installed
 
-### 6. Coordinates of a square
-* a class Square that defines a square by: (based on 5-square.py)
-* Private instance attribute: size:
-* Private instance attribute: position:
-* Instantiation with optional size and optional position: def __init__(self, size=0, position=(0, 0)):
-* Public instance method: def area(self): that returns the current square area
-* Public instance method: def my_print(self): that prints in stdout the square with the character #:
+* Must have repository cloned
 
-### 7. Singly linked list
-* a class Node that defines a node of a singly linked list by:
-* Private instance attribute: data:
-* Private instance attribute: next_node:
-* Instantiation with data and next_node: def __init__(self, data, next_node=None):
-* a class SinglyLinkedList that defines a singly linked list:
-* File: 100-singly_linked_list.py
+* Must have `python3` installed
 
-### 8. Print Square instance
-* a class Square that defines a square by: (based on 6-square.py)
-* Private instance attribute: size:
-* Private instance attribute: position:
-* Instantiation with optional size and optional position: def __init__(self, size=0, position=(0, 0)):
-* Public instance method: def area(self): that returns the current square area
-* Public instance method: def my_print(self): that prints in stdout the square with the character #:
-* Printing a Square instance should have the same behavior as my_print()
-* File: 101-square.py
+```
+$ sudo apt-get install git
+```
 
-### 9. Compare 2 squares
-* a class Square that defines a square by: (based on 4-square.py)
-* Private instance attribute: size:
-* Instantiation with size: def __init__(self, size=0):
-* Public instance method: def area(self): that returns the current square area
-* Square instance can answer to comparators: ==, !=, >, >=, < and <= based on the square area
-* File: 102-square.py
+```
+$ sudo apt-get install python3
+```
 
-### 10. ByteCode -> Python #5
-* File: 103-magic_class.py
+## :blue_book: Authors
+* **Bennett Dixon** - [@BennettDixon](https://github.com/BennettDixon)
+
+## :mag: License
+
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/BennettDixon/holbertonschool-higher_level_programming/blob/master/LICENSE.md) file for details
+
+
+
+## :mega: Acknowledgments
+
+* Holberton School (providing guidance)

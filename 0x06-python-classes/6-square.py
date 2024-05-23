@@ -1,64 +1,95 @@
 #!/usr/bin/python3
+
+
 class Square:
-    """A class to define a square."""
+    """
+    class square that has attributes:
+        size
+    some attributes are protected from input.
+    """
     def __init__(self, size=0, position=(0, 0)):
-        """Initialize the class."""
-        self.size = size
-        self.position = position
+        """
+        initialization function for our square clasee
+        """
+        if self.__validate_size(size):
+            self.__size = size
+        if self.__validate_pos(position):
+            self.__position = position
 
     @property
     def size(self):
-        """Gets size."""
+        """
+        getter for size attribute
+        """
         return self.__size
-
-    @property
-    def position(self):
-        """Gets position."""
-        return self.__position
-
-    def area(self):
-        """Returns the area of the square."""
-        return (self.__size ** 2)
-
-    def my_print(self):
-        """Prints the square, accounting for size and position"""
-        if self.__size == 0:
-            print()
-            return
-        print('\n' * self.__position[1], end='')
-        for i in range(self.__size):
-            print(' ' * self.__position[0] + '#' * self.__size)
-
-    def __valid_size(self, size):
-        """Checks if a variable is a positive integer."""
-        if isinstance(size, int):
-            if size >= 0:
-                return True
-            else:
-                raise ValueError("size must be >= 0")
-        else:
-            raise TypeError("size must be an integer")
-        return False
-
-    def __valid_position(self, position):
-        """Checks if a variable is a tuple of 2 positive integers."""
-        if isinstance(position, tuple):
-            if len(position) == 2:
-                if isinstance(position[0], int):
-                    if isinstance(position[1], int):
-                        if position[0] >= 0 <= position[1]:
-                            return True
-        raise TypeError("position must be a tuple of 2 positive integers")
-        return False
 
     @size.setter
     def size(self, value):
-        """Sets size."""
-        if self.__valid_size(value):
+        """
+        setter for size attribute
+        """
+        if self.__validate_size(value):
             self.__size = value
+
+    @property
+    def position(self):
+        """
+        getter for position attribute
+        """
+        return self.__position
 
     @position.setter
     def position(self, value):
-        """Sets position."""
-        if self.__valid_position(value):
+        """
+        setter for position attribute
+        """
+        if self.__validate_pos(value):
             self.__position = value
+
+    def area(self):
+        """
+        calculates the area of the square
+        """
+        return self.__size ** 2
+
+    def my_print(self):
+        """
+        prints the square using '#' characters
+        also takes into account position (x, y) offsets
+        """
+        i = 0
+        if self.__size == 0:
+            print()
+            return
+        for i in range(0, self.__position[1]):
+            print()
+        i = 0
+        for i in range(0, self.__size):
+            j = 0
+            x_pad = 0
+            for x_pad in range(0, self.__position[0]):
+                print(" ", end='')
+            for j in range(0, self.__size):
+                print("#", end='')
+            print()
+
+    def __validate_size(self, size):
+        """
+        validates the size, checking for errors
+        """
+        if type(size) != int:
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            return True
+        return False
+
+    def __validate_pos(self, position):
+        """
+        validates the position, checking for type errors
+        """
+        if not isinstance(position, type((0, 0))):
+            raise TypeError("position must be a tuple of 2 positive integers")
+            return False
+        return True
